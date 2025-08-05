@@ -279,7 +279,10 @@ def package_data():
     proto_files = []
     for proto_file in PROTO_FILES:
         source = os.path.join(PROTO_INCLUDE, proto_file)
-        target = os.path.join(proto_resources_path, proto_file[proto_file.find(PROTO_PATH_PREFIX):])
+        target = os.path.join(
+            proto_resources_path,
+            proto_file[proto_file.find(PROTO_PATH_PREFIX) :],
+        )
         relative_target = os.path.join(
             GRPC_PYTHON_PROTO_RESOURCES_NAME, proto_file
         )
